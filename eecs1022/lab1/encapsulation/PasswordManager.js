@@ -1,6 +1,8 @@
 
 // Creating a PasswordManager class: 
 // Implement a PasswordManager class that securely stores and manages passwords. The passwords should be stored in a private property. The class should have methods for adding a password, retrieving a password, deleting a password, and updating a password. These methods should be the only way to interact with the stored passwords.
+const inquirer = require('inquirer');
+
 
 class PasswordManager {
     // #passwordArr=[];  //this is a private field
@@ -17,23 +19,10 @@ class PasswordManager {
 
         if( objKeys.includes(website) ){
             console.log(`${website} is already in array`)
+
         } else {
             this.#entry[website] = password;
         }
-
-        // for (const element of objKeys) {
-        //     console.log(`current element is ${element}`)
-        //    if(element!==website){
-            
-        //     console.log(`${website} is not in array`)
-        //     this.#entry[website] = password;
-            
-        //    } else {
-        //     console.log(`${website} is in array`)
-        //    }
-        // }
-
-
     }
     getPass() {
         console.log(this.#entry)
@@ -50,6 +39,6 @@ const pass1 = new PasswordManager('password', 'twitch');
 pass1.addPass('pass2', 'web2');
 pass1.getPass();
 pass1.addPass('pass3', 'web2');
-// // pass1.getPass();
+pass1.getPass();
 // pass1.addPass('pass4', 'web3');
 // pass1.getPass();
